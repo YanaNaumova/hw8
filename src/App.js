@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import ListItems from "./components/listItems";
+import TodoForm from "./components/TodoForm";
+import { useState } from "react";
+import React from "react";
 
 function App() {
+  const [items, setItems] = useState([]);
+  const [inputValue, setInputValue] = useState("");
+
+  function addItem(event) {
+    event.preventDefault();
+    setItems([...items, inputValue]);
+    setInputValue("");
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TodoForm
+        setInputValue={setInputValue}
+        addItem={addItem}
+        inputValue={inputValue}
+      />
+      <ListItems items={items} />
     </div>
   );
 }
