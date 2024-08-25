@@ -17,7 +17,7 @@ function TodoForm({ setInputValue, inputValue, addItem }) {
 }
 
 TodoForm.propTypes = {
-  setInputValue: PropTypes.string,
+  setInputValue: PropTypes.func,
   inputValue: PropTypes.string,
   addItem: PropTypes.func,
 };

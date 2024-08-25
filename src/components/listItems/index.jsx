@@ -17,7 +17,7 @@ function ListItems({ items }) {
 }
 
 ListItems.propTypes = {
-  items: PropTypes.object,
+  items: PropTypes.array,
 };
 
 export default ListItems;
